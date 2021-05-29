@@ -1,4 +1,5 @@
-FROM node as npm
+FROM node:lts as npm
+ENV DEFAULT_SITE="wsstelnet://bbs.pharos.rocks"
 RUN git clone https://github.com/robertabcd/PttChrome.git /app && cd /app && \
     npm install && npm run prebuild && npm run build
 
